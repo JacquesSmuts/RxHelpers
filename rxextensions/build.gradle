@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
-
 
     defaultConfig {
         minSdkVersion 19
@@ -23,6 +23,18 @@ android {
     }
 
 }
+
+publish {
+    userOrg = 'jacquessmuts'
+    groupId = 'com.jacquessmuts'
+    repoName = 'RxHelpers'
+    artifactId = 'RxHelpers'
+    publishVersion = '0.0.1'
+    bintrayUser = 'JacquesSmuts'
+    desc = 'A list of small kotlin extension functions and delegates for RxJava'
+    website = 'https://github.com/jacquessmuts/rxhelpers'
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
