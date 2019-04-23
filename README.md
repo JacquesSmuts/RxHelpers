@@ -27,7 +27,7 @@ Usage
 Setting Defaults
 -----
 
-You can set the default handling of some functions. The `onCreate` of your application is the most logical choice.
+You can set the default handling of some functions. Do it in the `onCreate` of your application.
 
 
 ```kotlin
