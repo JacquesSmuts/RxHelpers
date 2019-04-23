@@ -29,7 +29,7 @@ publish {
     groupId = 'com.jacquessmuts'
     repoName = 'RxHelpers'
     artifactId = 'rxhelpers'
-    publishVersion = '0.0.2'
+    publishVersion = '0.0.3'
     bintrayUser = 'JacquesSmuts'
     bintrayKey = System.getenv("BINTRAY_KEY")
     desc = 'A list of small kotlin extension functions and delegates for RxJava'
