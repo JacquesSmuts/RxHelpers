@@ -41,7 +41,7 @@ workflows:
       - hold:
           type: approval
           requires:
-            - tests
+            - prepare
           filters:
             branches:
               only:
