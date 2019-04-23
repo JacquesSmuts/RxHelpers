@@ -53,11 +53,13 @@ class MainActivity : AppCompatActivity() {
 
         Timber.plant(Timber.DebugTree())
 
-        RxHelper.setDefaultErrorHandling {
-            Timber.e(it)
+        RxHelper.setDefaultErrorHandling { throwable ->
+            // Every time .subscribeAndLogE catches an error, this will run
+            Timber.e(throwable)
         }
 
-        RxHelper.setClickRapidity(500)
+        // events faster than 500ms will be filtered out by .filterRapidClick()
+        RxHelper.setMaximumClickRapidity(500)
 
     }
 

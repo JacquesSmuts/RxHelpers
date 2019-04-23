@@ -28,7 +28,7 @@ object RxHelper {
     @Volatile
     internal var maxClickRapidity = DEFAULT_CLICK_MAX_RAPIDITY
 
-    fun setClickRapidity(milliseconds: Long) {
+    fun setMaximumClickRapidity(milliseconds: Long) {
         maxClickRapidity = milliseconds
     }
 
