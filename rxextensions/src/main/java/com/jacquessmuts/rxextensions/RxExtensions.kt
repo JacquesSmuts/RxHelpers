@@ -5,7 +5,6 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
 
 /**
  * Created by jacquessmuts on 2019-04-22
@@ -21,7 +20,7 @@ fun <T> Observable<T>.filterRapidClicks() = throttleFirst(300, java.util.concurr
  *same as subscribe, except it logs errors with Timber.e() automatically
  * */
 fun <T> Observable<T>.subscribeAndLogE(onNext: (it: T) -> Unit): Disposable =
-    subscribe(onNext, Timber::e)
+    subscribe(onNext, RxHelper.errorHandler)
 
 /**
  * Puts the Observer on the Main/UI Thread using [Observable.observeOn]. Please make sure you understand

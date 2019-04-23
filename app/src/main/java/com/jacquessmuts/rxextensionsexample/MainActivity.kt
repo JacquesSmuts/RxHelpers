@@ -2,16 +2,16 @@ package com.jacquessmuts.rxextensionsexample
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.jacquessmuts.rxextensions.LazyPublishSubject
+import com.jacquessmuts.rxextensions.RxHelper
 import com.jacquessmuts.rxextensions.computationThread
 import com.jacquessmuts.rxextensions.subscribeAndLogE
 import com.jacquessmuts.rxextensions.uiThread
-import io.reactivex.subjects.PublishSubject
-
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        setDefault()
 
         setObservable()
     }
@@ -46,15 +48,29 @@ class MainActivity : AppCompatActivity() {
 
     val stringPublisher by LazyPublishSubject<String>()
 
+    fun setDefault() {
+
+        Timber.plant(Timber.DebugTree())
+
+        RxHelper.setDefaultErrorHandling {
+            Timber.e(it)
+        }
+
+    }
+
     fun setObservable() {
 
         stringPublisher
             .computationThread() // Puts this on computation thread
             .uiThread() // Puts this back on ui/main thread
+            .map {
+                throw Exception("testttttt")
+            }
             .subscribeAndLogE { string ->
                 //do something with string
             }
 
+        stringPublisher.onNext("test")
 
     }
 }
