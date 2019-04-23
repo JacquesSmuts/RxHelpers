@@ -8,6 +8,7 @@ import android.view.MenuItem
 import com.jacquessmuts.rxextensions.LazyPublishSubject
 import com.jacquessmuts.rxextensions.RxHelper
 import com.jacquessmuts.rxextensions.computationThread
+import com.jacquessmuts.rxextensions.filterRapidClicks
 import com.jacquessmuts.rxextensions.subscribeAndLogE
 import com.jacquessmuts.rxextensions.uiThread
 import kotlinx.android.synthetic.main.activity_main.*
@@ -56,11 +57,14 @@ class MainActivity : AppCompatActivity() {
             Timber.e(it)
         }
 
+        RxHelper.setClickRapidity(500)
+
     }
 
     fun setObservable() {
 
         stringPublisher
+            .filterRapidClicks() // filters out rapid events within 300ms
             .computationThread() // Puts this on computation thread
             .uiThread() // Puts this back on ui/main thread
             .map {

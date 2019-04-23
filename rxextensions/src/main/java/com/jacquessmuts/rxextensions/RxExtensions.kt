@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Adds a 300ms delay for clickable objects
  */
-fun <T> Observable<T>.filterRapidClicks() = throttleFirst(300, java.util.concurrent.TimeUnit.MILLISECONDS)
+fun <T> Observable<T>.filterRapidClicks() = throttleFirst(RxHelper.maxClickRapidity, java.util.concurrent.TimeUnit.MILLISECONDS)
 
 /**
  *same as subscribe, except it logs errors with Timber.e() automatically

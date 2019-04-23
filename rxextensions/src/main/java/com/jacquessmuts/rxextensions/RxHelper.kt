@@ -11,7 +11,7 @@ import java.io.StringWriter
 
 object RxHelper {
 
-    const val TAG = "RxHelperDefault"
+    private const val TAG = "RxHelperDefault"
 
     private val DEFAULT_LOG_BEHAVIOUR: (error: Throwable) -> Unit =  {
         Log.e(TAG, getStackTraceFrom(it))
@@ -22,6 +22,14 @@ object RxHelper {
 
     fun setDefaultErrorHandling(onError: (error: Throwable) -> Unit) {
         errorHandler = onError
+    }
+
+    private const val DEFAULT_CLICK_MAX_RAPIDITY = 300L
+    @Volatile
+    internal var maxClickRapidity = DEFAULT_CLICK_MAX_RAPIDITY
+
+    fun setClickRapidity(milliseconds: Long) {
+        maxClickRapidity = milliseconds
     }
 
     /**
