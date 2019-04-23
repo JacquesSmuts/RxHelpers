@@ -19,5 +19,7 @@ Usage
 
 | Extension  | Description | Example |
 | ------------- | ------------- | ------------- |
-| .filterRapidClicks() | Throttles out events within 300ms | Most of them. [ButtonRapidClickActivity](https://github.com/JacquesSmuts/RxStarter/blob/master/app/src/main/java/com/jacquessmuts/rxstarter/java/sample/ButtonRapidClickActivity.java)  |
-| .subscribeAndLogE{} | same as .subscribe{}, except it logs an error by default. | [SingleActivity](https://github.com/JacquesSmuts/RxStarter/blob/master/app/src/main/java/com/jacquessmuts/rxstarter/java/sample/SingleActivity.java) |
+| .filterRapidClicks() | Throttles out events within 300ms | Most of them. [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L52)  |
+| .subscribeAndLogE{} | Same as .subscribe{}, except it logs an error by default. | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L52) |
+| .computationThread() | Same as observeOn(Schedulers.computation())| [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L52) |
+| .uiThread() | Same as observeOn(AndroidSchedulers.mainThread()) | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L52) |
