@@ -31,7 +31,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Publish to Bintray
-          command: ./gradlew build bintrayUpload -PdryRun=false
+          command: ./gradlew build bintrayUpload -PdryRun=true
 
 workflows:
   version: 2
@@ -50,6 +50,7 @@ workflows:
               only:
                 - master
                 - /release\/.*/ # all branches starting with release/
+                - circleci
       - deploy:
           requires:
             - hold
@@ -58,3 +59,4 @@ workflows:
               only:
                 - master
                 - /release\/.*/ # all branches starting with release/
+                - circleci
