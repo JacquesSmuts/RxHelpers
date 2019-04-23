@@ -38,9 +38,6 @@ workflows:
   build-and-deploy:
     jobs:
       - prepare
-      - tests:
-          requires:
-            - prepare
       - hold:
           type: approval
           requires:
