@@ -19,15 +19,15 @@ Usage
 
 | Extension  | Description | Example |
 | ------------- | ------------- | ------------- |
-| .filterRapidClicks() | Throttles out events within 300ms | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L69)  |
-| .subscribeAndLogE{} | Same as .subscribe{}, except it logs an error by default. | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L75) |
-| .computationThread() | Same as observeOn(Schedulers.computation())| [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L70) |
-| .uiThread() | Same as observeOn(AndroidSchedulers.mainThread()) | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L71) |
+| .filterRapidClicks() | Throttles out events within 300ms | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/master/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L69)  |
+| .subscribeAndLogE{} | Same as .subscribe{}, except it logs an error by default. | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/master/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#75) |
+| .computationThread() | Same as observeOn(Schedulers.computation())| [Example](https://github.com/JacquesSmuts/RxHelpers/blob/master/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L70) |
+| .uiThread() | Same as observeOn(AndroidSchedulers.mainThread()) | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/master/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L71) |
 
 
 | Delegate  | Description | Example |
 | ------------- | ------------- | ------------- |
-| LazyPublishSubject<> | Creates a lazy-loaded PublishSubject<> | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/d62b70e295ffd60263608c3f19781a5e98bd0875/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L50)  |
+| LazyPublishSubject<> | Creates a lazy-loaded PublishSubject<> | [Example](https://github.com/JacquesSmuts/RxHelpers/blob/master/app/src/main/java/com/jacquessmuts/rxextensionsexample/MainActivity.kt#L50)  |
 
 Setting Defaults
 -----
